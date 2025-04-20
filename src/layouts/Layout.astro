@@ -7,29 +7,25 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>YUMMI APP</title>
 		<script
+			type="text/partytown"
 			async
 			src="https://www.googletagmanager.com/gtag/js?id=G-B7V3PEB8YP"
 		></script>
-		<script>
+		<script type="text/partytown">
 			window.dataLayer = window.dataLayer || [];
-			declare global {
-				interface Window {
-					dataLayer: any[];
-				}
+			function gtag() {
+				dataLayer.push(arguments);
 			}
-			window.dataLayer = window.dataLayer || [];
-			function gtag(...args: any[]) {
-				window.dataLayer.push(args);
-			}
+			gtag("js", new Date());
 
 			gtag("config", "G-B7V3PEB8YP");
 		</script>
 	</head>
-
-	<body class="w-full h-screen flex flex-col justify-between fondo">
-		<slot />
-	</body>
 </html>
+
+<body class="w-full h-screen flex flex-col justify-between fondo">
+	<slot />
+</body>
 
 <style>
 	.fondo {
